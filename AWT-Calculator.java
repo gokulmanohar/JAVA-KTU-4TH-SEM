@@ -60,7 +60,7 @@ class calculator implements ActionListener
     }
     public void actionPerformed(ActionEvent e)
     {
-        if(e.getSource()==b1)
+        i
         {
             s3 = tf.getText();
             s4 = "0";
