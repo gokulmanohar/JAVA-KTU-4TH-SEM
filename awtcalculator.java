@@ -5,7 +5,6 @@ class awtc extends Frame implements ActionListener
 	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, plus, minus, multiply, divide, equal, clear, dec;
 	TextField tf; 
 	float res;
-	GridLayout g;
 	static String stext="";
 	awtc()
 	{
@@ -27,48 +26,28 @@ class awtc extends Frame implements ActionListener
 		equal=new Button("=");
 		plus=new Button("+");
 
-		final Font font = new Font("Arial", 0, 18);
 		tf.setBounds(50,50,280,30);
 		tf.setEditable(false);
-		tf.setFont(font);
 
 		b1.setBounds(50,120,70,50);
-		b1.setFont(font);
 		b2.setBounds(120,120,70,50);
-		b2.setFont(font);
 		b3.setBounds(190,120,70,50);
-		b3.setFont(font);
 		divide.setBounds(260,120,70,50);
-		divide.setFont(font);
 
 		b4.setBounds(50,175,70,50);
-		b4.setFont(font);
 		b5.setBounds(120,175,70,50);
-		b5.setFont(font);
 		b6.setBounds(190,175,70,50);
-		b6.setFont(font);
 		multiply.setBounds(260,175,70,50);
-		multiply.setFont(font);
 
 		b7.setBounds(50,230,70,50);
-		b7.setFont(font);
 		b8.setBounds(120,230,70,50);
-		b8.setFont(font);
 		b9.setBounds(190,230,70,50);
-		b9.setFont(font);
 		minus.setBounds(260,230,70,50);
-		minus.setFont(font);
 
 		dec.setBounds(50,285,70,50);
-		dec.setFont(font);
 		b0.setBounds(120,285,70,50);
-		b0.setFont(font);
 		equal.setBounds(190,285,70,50);
-		equal.setFont(font);
-		equal.setBackground(Color.YELLOW);
 		plus.setBounds(260,285,70,50);
-		plus.setFont(font);
-
 			
 		b0.addActionListener(this);
 		b1.addActionListener(this);
@@ -109,8 +88,7 @@ class awtc extends Frame implements ActionListener
 		add(divide);
 		add(equal);
 		add(dec);
-		setSize(400,420);
-		setBackground(Color.GRAY);
+		setSize(380,380);
 		setLayout(null);
 		setVisible(true);	
 	}
