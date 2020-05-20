@@ -1,6 +1,6 @@
 // Java code for thread creation by extending 
 // the Thread class 
-class ThreadSample extends Thread 
+class ThreadUsingExtends extends Thread 
 { 
 	public void run() 
 	{ 
