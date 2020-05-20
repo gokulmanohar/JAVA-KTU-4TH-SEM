@@ -2,13 +2,13 @@
 
 import java.awt.*;  
 import java.awt.event.*; 
-class AWT_Calculator extends Frame implements ActionListener
+class awtCalculator extends Frame implements ActionListener
 {
 	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, plus, minus, multiply, divide, equal, dec;
 	TextField tf; 
 	float res;
 	static String stext="";
-	AWT_Calculator()
+	awtCalculator()
 	{
 		tf = new TextField(10);
 		b7=new Button("7");
@@ -220,6 +220,6 @@ class AWT_Calculator extends Frame implements ActionListener
 	}
 
 	public static void main(final String args[]) {
-		final AWT_Calculator calculate = new AWT_Calculator();
+		final awtCalculator calculate = new awtCalculator();
 	}
 }
