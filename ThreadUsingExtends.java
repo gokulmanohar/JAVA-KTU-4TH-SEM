@@ -24,7 +24,7 @@ public static void main(String[] args)
 		int n = 3; // Number of threads 
 		for (int i=0; i<n; i++) 
 		{ 
-			ThreadSample object = new ThreadSample(); 
+			ThreadUsingExtends object = new ThreadUsingExtends(); 
 			object.start(); 
 		} 
 	}	
