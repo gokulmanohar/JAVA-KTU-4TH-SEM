@@ -1,12 +1,14 @@
+//This is a simple java awt calculator with two operands and can perform addition, subtraction, multiplication and division.
+
 import java.awt.*;  
 import java.awt.event.*; 
-class awtc extends Frame implements ActionListener
+class AWT_Calculator extends Frame implements ActionListener
 {
-	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, plus, minus, multiply, divide, equal, clear, dec;
+	Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, plus, minus, multiply, divide, equal, dec;
 	TextField tf; 
 	float res;
 	static String stext="";
-	awtc()
+	AWT_Calculator()
 	{
 		tf = new TextField(10);
 		b7=new Button("7");
@@ -26,28 +28,51 @@ class awtc extends Frame implements ActionListener
 		equal=new Button("=");
 		plus=new Button("+");
 
-		tf.setBounds(50,50,280,30);
-		tf.setEditable(false);
+		//font formating
+		final Font font = new Font("Arial", 0, 18);
 
-		b1.setBounds(50,120,70,50);
-		b2.setBounds(120,120,70,50);
-		b3.setBounds(190,120,70,50);
+		//setBounds(int x-coordinate, int y-coordinate, int width, int height)
+		tf.setBounds(50,50,280,50);
+		tf.setEditable(false);
+		tf.setFont(font);
+
+		b7.setBounds(50,120,70,50);
+		b7.setFont(font);
+		b8.setBounds(120,120,70,50);
+		b8.setFont(font);
+		b9.setBounds(190,120,70,50);
+		b9.setFont(font);
 		divide.setBounds(260,120,70,50);
+		divide.setFont(font);
 
 		b4.setBounds(50,175,70,50);
+		b4.setFont(font);
 		b5.setBounds(120,175,70,50);
+		b5.setFont(font);
 		b6.setBounds(190,175,70,50);
+		b6.setFont(font);
 		multiply.setBounds(260,175,70,50);
+		multiply.setFont(font);
 
-		b7.setBounds(50,230,70,50);
-		b8.setBounds(120,230,70,50);
-		b9.setBounds(190,230,70,50);
+		b1.setBounds(50,230,70,50);
+		b1.setFont(font);
+		b2.setBounds(120,230,70,50);
+		b2.setFont(font);
+		b3.setBounds(190,230,70,50);
+		b3.setFont(font);
 		minus.setBounds(260,230,70,50);
+		minus.setFont(font);
 
 		dec.setBounds(50,285,70,50);
+		dec.setFont(font);
 		b0.setBounds(120,285,70,50);
+		b0.setFont(font);
 		equal.setBounds(190,285,70,50);
+		equal.setFont(font);
+		equal.setBackground(Color.YELLOW);
 		plus.setBounds(260,285,70,50);
+		plus.setFont(font);
+
 			
 		b0.addActionListener(this);
 		b1.addActionListener(this);
@@ -88,7 +113,8 @@ class awtc extends Frame implements ActionListener
 		add(divide);
 		add(equal);
 		add(dec);
-		setSize(380,380);
+		setSize(380, 380);
+        setBackground(Color.darkGray);
 		setLayout(null);
 		setVisible(true);	
 	}
@@ -157,23 +183,23 @@ class awtc extends Frame implements ActionListener
 			tf.setText(stext);
 		}
 		if (e.getSource() == equal) {
-			final String[] ws = stext.split(" ");
-			final String a1 = ws[0];
-			final String a2 = ws[1];
-			final String a3 = ws[2];
-			final float op1 = Float.parseFloat(a1);
-			final float op2 = Float.parseFloat(a3);
+			final String[] words = stext.split(" ");
+			final String w1 = words[0];
+			final String w2 = words[1];
+			final String w3 = words[2];
+			final float op1 = Float.parseFloat(w1);
+			final float op2 = Float.parseFloat(w3);
 			int check = 0;
-			if (a2.equals("+")) {
+			if (w2.equals("+")) {
 				res = op1 + op2;
 				check = 1;
-			} else if (a2.equals("-")) {
+			} else if (w2.equals("-")) {
 				res = op1 - op2;
 				check = 1;
-			} else if (a2.equals("*")) {
+			} else if (w2.equals("*")) {
 				res = op1 * op2;
 				check = 1;
-			} else if (a2.equals("/")) {
+			} else if (w2.equals("/")) {
 				if (op2 == 0.0) {
 					tf.setText("Math Error");
 				} else {
@@ -194,6 +220,6 @@ class awtc extends Frame implements ActionListener
 	}
 
 	public static void main(final String args[]) {
-		final awtc f = new awtc();
+		final AWT_Calculator calculate = new AWT_Calculator();
 	}
 }
