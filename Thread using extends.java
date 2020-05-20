@@ -1,6 +1,6 @@
 // Java code for thread creation by extending 
 // the Thread class 
-class MultithreadingDemo extends Thread 
+class ThreadSample extends Thread 
 { 
 	public void run() 
 	{ 
@@ -13,20 +13,21 @@ class MultithreadingDemo extends Thread
 		catch (Exception e) 
 		{ 
 			// Throwing an exception 
-			System.out.println ("Exception is caught"); 
+			System.out.println ("An exception is caught"); 
 		} 
 		
 	} 
-}
-class MainMethod{
+
+
 public static void main(String[] args) 
 	{ 
-		int n = 8; // Number of threads 
+		int n = 3; // Number of threads 
 		for (int i=0; i<n; i++) 
 		{ 
-			MultithreadingDemo object = new MultithreadingDemo(); 
+			ThreadSample object = new ThreadSample(); 
 			object.start(); 
 		} 
 	}	
+
 
 }
