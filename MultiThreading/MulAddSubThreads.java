@@ -6,12 +6,12 @@ public class MulAddSubThreads{
 		int n1 = sc.nextInt();
 		int n2 = sc.nextInt();
 		Add t2 = new Add(n1, n2);
-        Mul t1 = new Mul(n1, n2);
-        Sub t3 = new Sub(n1, n2);
+       		Mul t1 = new Mul(n1, n2);
+        	Sub t3 = new Sub(n1, n2);
 		try {
-            t1.start(); t1.join();
-            t2.start(); t2.join();
-            t3.start(); t3.join();
+		    t1.start(); t1.join();
+		    t2.start(); t2.join();
+		    t3.start(); t3.join();
 		} 
 		catch (Exception e) {
 		    e.printStackTrace();
