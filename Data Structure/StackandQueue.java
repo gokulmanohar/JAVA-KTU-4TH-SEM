@@ -1,133 +1,5 @@
 import java.util.Scanner;
 //-------------------------------------------------------------------------------
-//-------------------------------MAIN CLASS--------------------------------------
-//-------------------------------------------------------------------------------
-public class StackandQueue{
-   public static void main(String[] args){
-
-      //Data Structure - Stack & Queue Using Array
-      Scanner scan = new Scanner(System.in);
-      System.out.print("CHOOSE THE DATA STRUCTURE");
-      System.out.print("\n1. Stack \n2. Queue \n3. EXIT\n");
-      System.out.print("Enter Your Choice: ");
-      int DSchoice = Integer.parseInt(scan.next());
-      Stack st = new Stack();
-      Queue qu = new Queue();
-         switch(DSchoice)
-         {
-            case 1:
-            st.stack();
-            break;
-            case 2:
-            qu.queue();
-            break;
-            case 3:
-            scan.close();
-            System.exit(1);
-            break;
-            default:
-            System.out.println("\nWrong Choice!");
-            break;
-         }
-      }
-   }
-
-
-//-------------------------------------------------------------------------------
-//--------------------------------STACK CLASS------------------------------------
-//-------------------------------------------------------------------------------
-class Stack{
-   static Scanner scan = new Scanner(System.in);
-   public void stack(){
-      Insert ins = new Insert("Stack");
-      Delete del = new Delete("Stack");
-      Display dis = new Display("Stack");
-      System.out.print("\n-----------------------STACK-----------------------\n");
-      System.out.println("\nEnter the size of the Stack: ");
-      Global_Variables.size = Integer.parseInt(scan.next());
-      boolean condition = true;
-      while(condition){
-         System.out.println("\n1. Insert element to Stack \n2. Delete element from Stack \n3. Display all elements of Stack \n4. Quit");
-         System.out.print("Enter Your Choice: ");
-         int choice = Integer.parseInt(scan.next());
-         switch (choice)
-         {
-            case 1:
-            ins.insert();
-            break;
-            case 2:
-            del.delete();
-            break;
-            case 3:
-            dis.display();
-            break;
-            case 4:
-            System.exit(1);
-            default:
-            System.out.println("\nWrong choice \n");
-         }
-
-         System.out.println("\nDo You Want To Continue? (Y/N)");
-         String str = scan.next();
-         System.out.print("--------------------------------------------------\n");
-         char e = str.charAt(0);
-         if(e =='y' || e == 'Y'){
-            condition = true;
-         }
-         else{
-            condition = false;
-         }
-      }
-   }
-}
-
-//-------------------------------------------------------------------------------
-//--------------------------------QUEUE CLASS------------------------------------
-//-------------------------------------------------------------------------------
-class Queue{
-   static Scanner scan = new Scanner(System.in);
-   public void queue(){
-      Insert ins = new Insert();
-      Delete del = new Delete();
-      Display dis = new Display();
-      boolean condition = true;
-      while(condition){
-         System.out.print("\n-----------------------QUEUE-----------------------\n");
-         System.out.println("\n1. Insert element to Queue \n2. Delete element from Queue \n3. Display all elements of Queue \n4. Quit");
-         System.out.print("Enter Your Choice: ");
-         int choice = Integer.parseInt(scan.next());
-         switch (choice)
-         {
-            case 1:
-            ins.insert();
-            break;
-            case 2:
-            del.delete();
-            break;
-            case 3:
-            dis.display();
-            break;
-            case 4:
-            break;
-            default:
-            System.out.println("\nWrong Choice!");
-            break;
-         }
-         System.out.println("\nDo You Want To Continue? (Y/N)");
-         String str = scan.next();
-         System.out.print("--------------------------------------------------\n");
-         char e = str.charAt(0);
-         if(e =='y' || e == 'Y'){
-            condition = true;
-         }
-         else{
-            condition = false;
-         }
-      }
-   }
-}
-
-//-------------------------------------------------------------------------------
 //------------------------------GLOBAL VARIABLES---------------------------------
 //-------------------------------------------------------------------------------
 class Global_Variables{
@@ -319,3 +191,130 @@ class Display{
       }
    }
 }
+
+//-------------------------------------------------------------------------------
+//--------------------------------STACK CLASS------------------------------------
+//-------------------------------------------------------------------------------
+class Stack{
+   static Scanner scan = new Scanner(System.in);
+   public void stack(){
+      Insert ins = new Insert("Stack");
+      Delete del = new Delete("Stack");
+      Display dis = new Display("Stack");
+      System.out.print("\n-----------------------STACK-----------------------\n");
+      System.out.println("\nEnter the size of the Stack: ");
+      Global_Variables.size = Integer.parseInt(scan.next());
+      boolean condition = true;
+      while(condition){
+         System.out.println("\n1. Insert element to Stack \n2. Delete element from Stack \n3. Display all elements of Stack \n4. Quit");
+         System.out.print("Enter Your Choice: ");
+         int choice = Integer.parseInt(scan.next());
+         switch (choice)
+         {
+            case 1:
+            ins.insert();
+            break;
+            case 2:
+            del.delete();
+            break;
+            case 3:
+            dis.display();
+            break;
+            case 4:
+            System.exit(1);
+            default:
+            System.out.println("\nWrong choice \n");
+         }
+
+         System.out.println("\nDo You Want To Continue? (Y/N)");
+         String str = scan.next();
+         System.out.print("--------------------------------------------------\n");
+         char e = str.charAt(0);
+         if(e =='y' || e == 'Y'){
+            condition = true;
+         }
+         else{
+            condition = false;
+         }
+      }
+   }
+}
+
+//-------------------------------------------------------------------------------
+//--------------------------------QUEUE CLASS------------------------------------
+//-------------------------------------------------------------------------------
+class Queue{
+   static Scanner scan = new Scanner(System.in);
+   public void queue(){
+      Insert ins = new Insert();
+      Delete del = new Delete();
+      Display dis = new Display();
+      boolean condition = true;
+      while(condition){
+         System.out.print("\n-----------------------QUEUE-----------------------\n");
+         System.out.println("\n1. Insert element to Queue \n2. Delete element from Queue \n3. Display all elements of Queue \n4. Quit");
+         System.out.print("Enter Your Choice: ");
+         int choice = Integer.parseInt(scan.next());
+         switch (choice)
+         {
+            case 1:
+            ins.insert();
+            break;
+            case 2:
+            del.delete();
+            break;
+            case 3:
+            dis.display();
+            break;
+            case 4:
+            break;
+            default:
+            System.out.println("\nWrong Choice!");
+            break;
+         }
+         System.out.println("\nDo You Want To Continue? (Y/N)");
+         String str = scan.next();
+         System.out.print("--------------------------------------------------\n");
+         char e = str.charAt(0);
+         if(e =='y' || e == 'Y'){
+            condition = true;
+         }
+         else{
+            condition = false;
+         }
+      }
+   }
+}
+
+//-------------------------------------------------------------------------------
+//-------------------------------MAIN CLASS--------------------------------------
+//-------------------------------------------------------------------------------
+public class StackandQueue{
+   public static void main(String[] args){
+
+      //Data Structure - Stack & Queue Using Array
+      Scanner scan = new Scanner(System.in);
+      System.out.print("CHOOSE THE DATA STRUCTURE");
+      System.out.print("\n1. Stack \n2. Queue \n3. EXIT\n");
+      System.out.print("Enter Your Choice: ");
+      int DSchoice = Integer.parseInt(scan.next());
+      Stack st = new Stack();
+      Queue qu = new Queue();
+         switch(DSchoice)
+         {
+            case 1:
+            st.stack();
+            break;
+            case 2:
+            qu.queue();
+            break;
+            case 3:
+            scan.close();
+            System.exit(1);
+            break;
+            default:
+            System.out.println("\nWrong Choice!");
+            break;
+         }
+      }
+   }
